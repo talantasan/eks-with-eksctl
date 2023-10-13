@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: talant-flask-app
+  name: talant-flask-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: talant-flask-app
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: talant-flask-app
+    spec:
+      containers:
+      - image: ktalant/flaskapp:v1
+        name: flaskapp
+        ports:
+        - containerPort: 5000
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "200m"
+          limits:
+            memory: "128Mi"
+            cpu: "400m"
