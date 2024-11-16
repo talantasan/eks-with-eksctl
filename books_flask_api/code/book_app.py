@@ -27,18 +27,18 @@ def employee():
             return 'Not Found', 404
         
     if request.method == 'POST':
-        new_id = employee_list[-1]['id']
+        iD = employee_list[-1]['id']
         new_name = request.form['name']
         new_occupation = request.form['occupation']
         
         new_object = {
-            'id': new_id,
+            'id': iD,
             'name': new_name,
             'occupation': new_occupation
         }
         
         employee_list.append(new_object)
-        return jsonify(new_object), 201
+        return jsonify(employee_list), 201
         
         
 
