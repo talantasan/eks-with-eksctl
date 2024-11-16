@@ -1,1 +1,11 @@
-./books_api_env/*
+env_books/
+.idea/
+.vscode/
+.venv*/
+venv*/
+__pycache__/
+dist/
+.coverage*
+htmlcov/
+.tox/
+docs/_build/
