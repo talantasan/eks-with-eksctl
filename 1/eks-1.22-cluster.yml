@@ -5,7 +5,7 @@ apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 
 metadata:
-  name: managed-cluster
+  name: talant-managed-cluster
   region: ${AWS_REGION}
 
 managedNodeGroups:
@@ -14,7 +14,7 @@ managedNodeGroups:
     maxSize: 4
     desiredCapacity: 3
     volumeSize: 20
-    iam:
-      withAddonPolicies:
-        externalDNS: true
-        certManager: true
+    # iam:
+    #   withAddonPolicies:
+    #     externalDNS: true
+    #     certManager: true

@@ -11,3 +11,13 @@ brew install virtualenv
 ```
 virtualenv myenv -t python3
 ```
+
+## 3. Activate venv
+```
+source myenv/bin/activate
+```
+
+## 4. Deactivate
+```
+deactivate
+```
