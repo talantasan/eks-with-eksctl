@@ -88,6 +88,32 @@ def books():
 
         books_list.append(new_obj)
         return jsonify(books_list), 201
+    
+@app.route('/book/<int:id>', methods=['GET', 'PUT', 'DELETE'])
+def single_book(id):
+    if request.method == 'GET':
+        for book in books_list:
+            if book['id'] == id:
+                return jsonify(book)
+            pass
+    
+    if request.method == 'PUT':
+        for book in books_list:
+            if book['id'] == id:
+                book['author'] = request.form['author']
+                book['title'] = request.form['title']
+                book['publisher'] = request.form['publisher']
+
+                updated_obj = {
+                    'id': id,
+                    'title': book['title'],
+                    'author': book['author'],
+                    'publisher': book['publisher']
+                }
+
+                return jsonify(updated_obj)
+            
+    
         
 
 
