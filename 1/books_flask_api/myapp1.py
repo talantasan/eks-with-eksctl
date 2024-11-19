@@ -65,7 +65,7 @@ def hello_world():
 def print_name(name):
     return f"<p>Hi {name}, welcome to custom page...<p>"
 
-@app.route("/book", methods=['GET', 'POST'])
+@app.route("/books", methods=['GET', 'POST'])
 def books():
     if request.method == 'GET':
         if len(books_list) > 0:
